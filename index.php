@@ -5,10 +5,12 @@
 
     <script src="https://cdn.plot.ly/plotly-2.3.1.min.js"></script>
 </head>
+
 <?php
     include("config.php");
     include("get_datas.php");
 ?>
+<script>var datas = <?php echo json_encode($array_res); ?>;</script>
 
 <body stlye="width: 100%">
     <h1>
@@ -23,22 +25,23 @@
             <p><?php echo $Currhum?>%</p>
         </div>
     </div>
-    
-    <h2>Last 1.5 hours</h2>
-    <div class="plots">
-        <div class="a" id="aTemp1.5"></div>
-        <div class="a" id="aHum1.5"></div>
-    </div>
-    <h2>Last day</h2>
+
+    <select name="interval" id="interval" onclick="update(this.value)">
+        <option value="1.5">1.5 hours</option>
+        <option value="6">6 hours</option>
+        <option value="12">12 hours</option>
+        <option value="24">24 hours</option>
+    </select>
+
+    <h2 id="period">Last 1.5 hours</h2>
     <div class="plots">
         <div class="a" id="aTemp1"></div>
         <div class="a" id="aHum1"></div>
     </div>
     <p class = "lastUpdate">Last updated: <?php echo $Currdate?></p>
 </body>
-
-<script>
-    var datas = <?php echo json_encode($array_res); ?>;
-</script>
-<script src="script.js"></script>
 </html>
+
+<script src="script.js">
+</script>
+

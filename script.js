@@ -1,47 +1,12 @@
-var xAxis1 = new Array();
-var temps1 = new Array();  
-var hums1 = new Array();
+var xAxis = new Array();
+var temps = new Array();
+var hums = new Array();
 
-var xAxis90 = new Array();
-var temps90 = new Array();  
-var hums90 = new Array();
-
-var help = datas.length;
 for(var i = 0; i < datas.length; i++){
-    xAxis1.push(datas[i][2]);
-    temps1.push(datas[i][0]);
-    hums1.push(datas[i][1]);
-    
-    if(i >= datas.length - 90){
-        xAxis90.push(datas[i][2]);
-        temps90.push(datas[i][0]);
-        hums90.push(datas[i][1]);
-    }
+    xAxis.push(datas[i][2]);
+    temps.push(datas[i][0]);
+    hums.push(datas[i][1]);
 }
-var traceHum90 = {
-    x: xAxis90,
-    y: hums90,
-    mode: 'lines+markers',
-    type: 'scatter'
-};
-var traceTemp90 = {
-    x: xAxis90,
-    y: temps90,
-    mode: 'lines+markers',
-    type: 'scatter'
-};
-var traceHum1 = {
-    x: xAxis1,
-    y: hums1,
-    mode: 'lines+markers',
-    type: 'scatter'
-};
-var traceTemp1 = {
-    x: xAxis1,
-    y: temps1,
-    mode: 'lines+markers',
-    type: 'scatter'
-};
 
 var layoutTemp = {
     title: {
@@ -105,12 +70,37 @@ var layoutHum = {
     }
 };
 
-var dataTemp90 = [traceTemp90];
-var dataHum90 = [traceHum90];
-var dataTemp1 = [traceTemp1];
-var dataHum1 = [traceHum1];
+function update(interval){
+    document.getElementById("period").innerHTML = "Last " + interval + " hours";
 
-Plotly.newPlot('aTemp1.5', dataTemp90, layoutTemp);
-Plotly.newPlot('aHum1.5', dataHum90, layoutHum);
-Plotly.newPlot('aTemp1', dataTemp1, layoutTemp);
-Plotly.newPlot('aHum1', dataHum1, layoutHum);
+    let xAxis_needed = new Array();
+    let temps_needed = new Array();  
+    let hums_needed = new Array();
+
+    for(let i = datas.length - (interval * 60); i < datas.length; i++){
+        xAxis_needed.push(xAxis[i]);
+        temps_needed.push(temps[i]);
+        hums_needed.push(hums[i]);
+    }
+
+    let traceHum = {
+        x: xAxis_needed,
+        y: hums_needed,
+        mode: 'lines+markers',
+        type: 'scatter'
+    };
+    let traceTemp = {
+        x: xAxis_needed,
+        y: temps_needed,
+        mode: 'lines+markers',
+        type: 'scatter'
+    };
+
+    let dataTemp = [traceTemp];
+    let dataHum = [traceHum];
+
+    Plotly.newPlot('aTemp1', dataTemp, layoutTemp);
+    Plotly.newPlot('aHum1', dataHum, layoutHum);
+}
+
+update(1.5);
