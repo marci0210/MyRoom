@@ -1,0 +1,49 @@
+body{
+    overflow-x: hidden;
+}
+
+h1, h2, h3{
+    display: flex;
+    justify-content: center;
+}
+
+.curr{
+    width: 100%; 
+    display: flex; 
+    /*justify-content: space-evenly;*/
+    justify-content: center;
+}
+.CurrTemp{
+    margin-right: 50px;
+}
+.CurrTemp p{
+    color:mediumseagreen;
+    font-size: 30px;
+}
+.CurrHum{
+    margin-left: 50px;
+}
+.CurrHum p{
+    color: mediumseagreen;
+    font-size: 30px;
+}
+.lastUpdate{
+    display: flex;
+    justify-content: center;
+}
+.plots{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.a{
+    width: 50%;
+    margin: 0 auto;
+}
+
+
+/* Plotly */
+.plot-container plotly{
+    display: flex;
+    justify-content: center;
+}
