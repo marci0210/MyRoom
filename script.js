@@ -16,7 +16,7 @@ var layoutTemp = {
             size: 20 
         },
         xref: 'paper',
-        x: 0.05,
+        x: 0.5,
     },
     xaxis: {
         title: {
@@ -37,7 +37,9 @@ var layoutTemp = {
             color: 'black'
         }
         }
-    }
+    },
+    plot_bgcolor:"white",
+    paper_bgcolor:"white"
 };
 var layoutHum = {
     title: {
@@ -67,7 +69,10 @@ var layoutHum = {
             color: 'black'
         }
         }
-    }
+    },
+    plot_bgcolor:"white",
+    paper_bgcolor:"white"
+    
 };
 
 function update(interval){
@@ -87,12 +92,28 @@ function update(interval){
         x: xAxis_needed,
         y: hums_needed,
         mode: 'lines+markers',
+        marker: {
+            color: 'rgb(128, 0, 128)',
+            size: 2
+        },
+        line: {
+            color: 'rgb(128, 0, 128)',
+            width: 2
+        },
         type: 'scatter'
     };
     let traceTemp = {
         x: xAxis_needed,
         y: temps_needed,
         mode: 'lines+markers',
+        marker: {
+            color: 'rgb(128, 0, 128)',
+            size: 2
+        },
+        line: {
+            color: 'rgb(128, 0, 128)',
+            width: 2
+        },
         type: 'scatter'
     };
 
@@ -103,4 +124,4 @@ function update(interval){
     Plotly.newPlot('aHum1', dataHum, layoutHum);
 }
 
-update(1.5);
+update(3);

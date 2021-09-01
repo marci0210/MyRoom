@@ -1,6 +1,6 @@
 <?php
     include("config.php");
-    $query = "select hum, temp, date from TempHum order by date desc limit 1440;";
+    $query = "select hum, temp, date from TempHum order by date desc limit 4320;";
     $ans = mysqli_query($db, $query);
     $row = $ans->fetch_assoc();
 
