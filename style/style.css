@@ -11,8 +11,8 @@ h1, h2, h3{
     justify-content: center;
 }
 .currIcons{
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
 }
 .line{
     width: 25%;
@@ -27,16 +27,16 @@ h1, h2, h3{
     flex-direction: column;
     justify-content: space-evenly;
     
-    width: 20%;
+    width: 15%;
 
-    background-color: rgb(254, 181, 51);
+    background-color: rgb(255, 191, 94);
     border-right-width: 20px;
     border-top-right-radius: 20px;
     border-bottom-right-radius: 20px;
-    border-color:rgb(254, 181, 51);
+    border-color:rgb(255, 191, 94);
 }
 .right{
-    width: 80%;
+    width: 85%;
 
     background-color:white;
 
@@ -74,9 +74,20 @@ h1, h2, h3{
 
     margin: 10px 0;
 }
+.selectint{
+    display: inline;
+    font-size: 25px;
+    color: gray;
+}
+.sel{
+    font-size: 22px;
+    font-family: 'Ubuntu', sans-serif;
+    color: gray;
+}
 .lastUpdate{
     display: flex;
     justify-content: center;
+    
 }
 .plots{
     display: flex;

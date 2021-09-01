@@ -44,8 +44,8 @@
             </div>
         </div>
         <div class="right">
-            <p style="display: inline">Select time interval: </p>
-            <select name="interval" id="interval" onclick="update(this.value)">
+            <p class="selectint">Select time interval: </p>
+            <select class="sel" name="interval" id="interval" onclick="update(this.value)">
                 <option value="3">3 hours</option>
                 <option value="6">6 hours</option>
                 <option value="12">12 hours</option>
@@ -54,7 +54,7 @@
                 <option value="72">72 hours</option>
             </select>
 
-            <h2 id="period">Last 1.5 hours</h2>
+            <!--<h2 id="period">Last 1.5 hours</h2>-->
             <div class="plots">
                 <div class="a" id="aTemp1"></div>
                 <div class="a" id="aHum1"></div>

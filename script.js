@@ -12,8 +12,9 @@ var layoutTemp = {
     title: {
         text:'Temperature',
         font: {
-            family: 'Times New Roman',
-            size: 20 
+            family: 'Ubuntu',
+            size: 20,
+            color: 'gray'
         },
         xref: 'paper',
         x: 0.5,
@@ -22,20 +23,24 @@ var layoutTemp = {
         title: {
         text: 'Date',
         font: {
-            family: 'Times New Roman',
+            family: 'Ubuntu',
             size: 18,
-            color: 'black'
-        }
+            color: 'gray'
+        },
+        xref: 'paper',
+        x: 0.5,
         },
     },
     yaxis: {
         title: {
         text: '°C',
         font: {
-            family: 'Times New Roman',
+            family: 'Ubuntu',
             size: 18,
-            color: 'black'
-        }
+            color: 'gray'
+        },
+        xref: 'paper',
+        x: 0.5,
         }
     },
     plot_bgcolor:"white",
@@ -45,29 +50,35 @@ var layoutHum = {
     title: {
         text:'Humidity',
         font: {
-            family: 'Times New Roman',
+            family: 'Ubuntu',
             size: 20,
-            color: 'black'
-        }
+            color: 'gray'
+        },
+        xref: 'paper',
+        x: 0.5,
     },
     xaxis: {
         title: {
         text: 'Date',
         font: {
-            family: 'Times New Roman',
+            family: 'Ubuntu',
             size: 18,
-            color: 'black'
-        }
+            color: 'gray'
+        },
+        xref: 'paper',
+        x: 0.5,
         },
     },
     yaxis: {
         title: {
         text: '%',
         font: {
-            family: 'Times New Roman',
+            family: 'Ubuntu',
             size: 18,
-            color: 'black'
-        }
+            color: 'blagrayck'
+        },
+        xref: 'paper',
+        x: 0.5,
         }
     },
     plot_bgcolor:"white",
@@ -76,7 +87,7 @@ var layoutHum = {
 };
 
 function update(interval){
-    document.getElementById("period").innerHTML = "Last " + interval + " hours";
+    /*document.getElementById("period").innerHTML = "Last " + interval + " hours";*/
 
     let xAxis_needed = new Array();
     let temps_needed = new Array();  
