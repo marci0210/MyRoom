@@ -131,8 +131,8 @@ function update(interval){
     let dataTemp = [traceTemp];
     let dataHum = [traceHum];
 
-    Plotly.newPlot('aTemp1', dataTemp, layoutTemp);
-    Plotly.newPlot('aHum1', dataHum, layoutHum);
+    Plotly.react('aTemp1', dataTemp, layoutTemp);
+    Plotly.react('aHum1', dataHum, layoutHum);
 }
 
 update(3);

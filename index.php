@@ -46,7 +46,7 @@
         </div>
         <div class="right">
             <p class="selectint">Select time interval: </p>
-            <select class="sel" name="interval" id="interval" onclick="update(this.value)">
+            <select class="sel" name="interval" id="interval" onchange="update(this.value)">
                 <option value="3">3 hours</option>
                 <option value="6">6 hours</option>
                 <option value="12">12 hours</option>
