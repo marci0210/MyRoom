@@ -109,3 +109,39 @@ h1, h2, h3{
     display: flex;
     justify-content: center;
 }
+
+@media only screen and (max-width: 968px){
+    body{
+        overflow-y:scroll;
+    }
+    .contain{
+        display: flex;
+        flex-direction: column;
+    }
+    .left{
+        width: 100%;
+        margin-bottom: 20px;
+        flex-direction: row;
+        
+        border-right-width: 0px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+    }
+    .Curr{
+        width: 50%;
+        margin: 20px;
+    }
+    .right{
+        width: 100%;
+        margin: 0;
+        border: 0;
+    }
+    .plots{
+        flex-direction: column;
+        margin-top: 20px;
+    }
+    .a{
+        width: 100%;
+        margin: 0;
+    }
+}

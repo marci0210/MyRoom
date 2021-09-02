@@ -104,11 +104,11 @@ function update(interval){
         y: hums_needed,
         mode: 'lines+markers',
         marker: {
-            color: 'rgb(128, 0, 128)',
+            color: 'blue',
             size: 2
         },
         line: {
-            color: 'rgb(128, 0, 128)',
+            color: 'blue',
             width: 2
         },
         type: 'scatter'
@@ -118,11 +118,11 @@ function update(interval){
         y: temps_needed,
         mode: 'lines+markers',
         marker: {
-            color: 'rgb(128, 0, 128)',
+            color: 'red',
             size: 2
         },
         line: {
-            color: 'rgb(128, 0, 128)',
+            color: 'red',
             width: 2
         },
         type: 'scatter'
