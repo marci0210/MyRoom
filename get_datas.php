@@ -1,18 +1,18 @@
 <?php
     include("config.php");
-    $query = "select hum, temp, date from TempHum order by date desc limit 4320;";
+    $query = "select humidity, temperature, timestamp from sensor_data order by timestamp desc limit 4320;";
     $ans = mysqli_query($db, $query);
     $row = $ans->fetch_assoc();
 
-    $Currhum = $row["hum"];
-    $Currtemp = $row["temp"];
-    $Currdate = $row["date"];
+    $Currhum = $row["humidity"];
+    $Currtemp = $row["temperature"];
+    $Currdate = $row["timestamp"];
 
-    $array = array(array($Currtemp, $Currhum, $date));
+    $array = array(array($Currtemp, $Currhum, $Currdate));
 
     while($row = $ans->fetch_assoc())
     {
-        array_push($array, array($row["temp"], $row["hum"], $row["date"]));
+        array_push($array, array($row["temperature"], $row["humidity"], $row["timestamp"]));
     }
     $array_res = array_reverse($array);    
 ?>

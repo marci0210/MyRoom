@@ -108,6 +108,7 @@ h1, h2, h3{
 .plot-container plotly{
     display: flex;
     justify-content: center;
+    width: 100%;
 }
 
 @media only screen and (max-width: 968px){

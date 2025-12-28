@@ -87,19 +87,30 @@ var layoutHum = {
 };
 
 function update(interval){
-    /*document.getElementById("period").innerHTML = "Last " + interval + " hours";*/
-
     let xAxis_needed = new Array();
     let temps_needed = new Array();  
-    let hums_needed = new Array();
+    let hums_needed  = new Array();
 
-    for(let i = datas.length - (interval * 60); i < datas.length; i++){
+    const xHoursAgo = new Date(new Date(xAxis[xAxis.length - 1]).getTime() - interval * 60 * 60 * 1000);
+
+    let closestIndex = 0;
+    let smallestDiff = Infinity;
+
+    xAxis.forEach((time, index) => {
+        const diff = Math.abs(new Date(time) - xHoursAgo);
+        if (diff < smallestDiff) {
+            smallestDiff = diff;
+            closestIndex = index;
+        }
+    });
+
+    for(let i = closestIndex; i < datas.length; i++){
         xAxis_needed.push(xAxis[i]);
         temps_needed.push(temps[i]);
         hums_needed.push(hums[i]);
     }
 
-    let traceHum = {
+    let traceHum  = {
         x: xAxis_needed,
         y: hums_needed,
         mode: 'lines+markers',
@@ -129,7 +140,7 @@ function update(interval){
     };
 
     let dataTemp = [traceTemp];
-    let dataHum = [traceHum];
+    let dataHum  = [traceHum];
 
     Plotly.react('aTemp1', dataTemp, layoutTemp);
     Plotly.react('aHum1', dataHum, layoutHum);
